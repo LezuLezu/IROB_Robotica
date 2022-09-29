@@ -71,9 +71,10 @@ void loop() {
 }
 
 void startWifi(){
-  wifiMulti.addAP("Ziggo8652001", "rkc38xkmzZyt");
-  wifiMulti.addAP("TP-LINK_0768_5G", " 77276995");
-  wifiMulti.addAP("TP-LINK_0768", "77276995");
+  //  Removed login credentials 
+  wifiMulti.addAP("", "");
+  wifiMulti.addAP("", " ");
+  wifiMulti.addAP("", "");
 
   Serial.println("Connecting.....");
   while (wifiMulti.run() != WL_CONNECTED){
@@ -133,23 +134,3 @@ inline int getMinutes(uint32_t UNIXTime){
 inline int getHours(uint32_t UNIXTime){
   return UNIXTime / 3600 % 24;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -17,9 +17,10 @@ void setup(void){
   delay(10);
   Serial.println('\n');
 
-  wifiMulti.addAP("Ziggo8652001", "rkc38xkmzZyt");
-  wifiMulti.addAP("TP-LINK_0768_5G", "77276995");
-  wifiMulti.addAP("TP-LINK_0768", "77276995");
+  //  Removed login credentials 
+  wifiMulti.addAP("", "");
+  wifiMulti.addAP("", " ");
+  wifiMulti.addAP("", "");
 
   Serial.println("Connecting....");
   int i = 0; 
@@ -88,18 +89,3 @@ bool handleFileRead(String path){
   Serial.println("\tFile Not Found");
   return false;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

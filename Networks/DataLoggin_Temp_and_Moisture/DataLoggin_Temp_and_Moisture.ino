@@ -125,8 +125,9 @@ void loop() {
 }
 
 void startWiFi() { 
-  wifiMulti.addAP("Ziggo8652001", "rkc38xkmzZyt");  
-  wifiMulti.addAP("iPhone van Zoë", "Mickey1106");
+//  Removed login credentials 
+  wifiMulti.addAP("", "");  
+  wifiMulti.addAP("  ", "");
 
   Serial.println("Connecting");
   while (wifiMulti.run() != WL_CONNECTED) { 

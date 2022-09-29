@@ -20,10 +20,10 @@ void setup(void){
   Serial.println('\n');
 
   pinMode(LED, OUTPUT);
-
-  wifiMulti.addAP("Ziggo8652001", "rkc38xkmzZyt");
-  wifiMulti.addAP("TP-LINK_0768_5G", "77276995");
-  wifiMulti.addAP("TP-LINK_0768", "77276995");
+  //  Removed login credentials 
+  wifiMulti.addAP("", "");
+  wifiMulti.addAP("", " ");
+  wifiMulti.addAP("", "");
 
   Serial.println("Connecting....");
   int i = 0; 

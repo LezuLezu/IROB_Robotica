@@ -1,7 +1,8 @@
 #include <ESP8266WiFi.h>
 
-const char* ssid = "Ziggo8652001";
-const char* password = "rkc38xkmzZyt";
+//  Removed login credentials 
+const char* ssid = "";
+const char* password = "";
 
 void setup(){
   Serial.begin(9600);
