@@ -7,7 +7,7 @@
 #include <ESP8266mDNS.h>
 #include <FS.h>
 
-#define DHTPIN 2
+#define DHTPIN 4
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -110,8 +110,9 @@ void loop() {
       templog.print(actualTime);
       templog.print(',');
       templog.print(temp);
-//      templog.print(',');
-//      templog.print(hum);
+      templog.print(',');
+      templog.print(hum);
+      templog.print('\n');
       templog.close();
     }
   } else{
