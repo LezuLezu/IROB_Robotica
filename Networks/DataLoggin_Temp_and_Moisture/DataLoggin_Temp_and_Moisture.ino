@@ -7,7 +7,7 @@
 #include <ESP8266mDNS.h>
 #include <FS.h>
 
-#define DHTPIN 4
+#define DHTPIN 2
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -51,7 +51,7 @@ const unsigned long intervalNTP = ONE_HOUR;
 unsigned long prevNTP = 0;
 unsigned long lastNTPResponse = millis();
 
-const unsigned long intervalTemp = 6000;
+const unsigned long intervalTemp = 60000;
 unsigned long prevTemp = 0;
 bool tmpRequested = false;
 const unsigned long DS_delay(2000);
@@ -110,8 +110,8 @@ void loop() {
       templog.print(actualTime);
       templog.print(',');
       templog.print(temp);
-      templog.print(',');
-      templog.print(hum);
+//      templog.print(',');
+//      templog.print(hum);
       templog.close();
     }
   } else{
@@ -125,6 +125,7 @@ void loop() {
 
 void startWiFi() { 
   wifiMulti.addAP("Ziggo8652001", "rkc38xkmzZyt");  
+  wifiMulti.addAP("iPhone van Zoë", "Mickey1106");
 
   Serial.println("Connecting");
   while (wifiMulti.run() != WL_CONNECTED) { 

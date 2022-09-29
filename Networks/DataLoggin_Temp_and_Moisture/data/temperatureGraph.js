@@ -55,10 +55,10 @@ function parseCSV(string) {
     var array = [];
     var lines = string.split("\n");
     for (var i = 0; i < lines.length; i++) {
-        var data = lines[i].split(",", 3);
+        var data = lines[i].split(",", 2);
         data[0] = new Date(parseInt(data[0]) * 1000);
         data[1] = parseFloat(data[1]);
-        data[2] = parseFloat(data[2]);
+        // data[2] = parseFloat(data[2]);
         array.push(data);
     }
     return array;
@@ -68,7 +68,7 @@ function drawChart() {
     var data = new google.visualization.DataTable();
     data.addColumn('datetime', 'UNIX');
     data.addColumn('number', 'Temperature');    
-    data.addColumn('number', 'Humidity');
+    // data.addColumn('number', 'Humidity');
 
     data.addRows(dataArray);
 
@@ -97,9 +97,13 @@ function drawChart() {
                 }
             }
         },
+        series:{
+            0: {targetAxisIndex: 0},
+            // 1: {targetAxisIndex: 1}
+        },
         vAxes: {    
             0: {title: 'Temperature (°C)', viewWindow: {min: 0, max: 50}},
-            1: {title: 'Humidity (%)', viewWindow: {min: 0, max: 100}}
+            // 1: {title: 'Humidity (%)', viewWindow: {min: 0, max: 100}}
         },
     };
 
