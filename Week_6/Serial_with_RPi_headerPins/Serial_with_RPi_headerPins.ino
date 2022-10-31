@@ -2,9 +2,16 @@
 int LED_PIN = 7;
 int serialInput;
 
+#define TX 1
+#define RX 0
+#include <SoftwareSerial.h>
+SoftwareSerial pi(RX, TX);
+
 void setup() {
-  Serial.begin(9600);
+  pi.begin(9600);
   pinMode(LED_PIN, OUTPUT);
+  pinMode(TX, OUTPUT);
+  pinMode(RX, INPUT);
 }
 
 void loop() {
@@ -17,14 +24,13 @@ void loop() {
 
 int readSerial(){
 //  serialInput = 0;
-  if(Serial.available()){
+  if(pi.available()){
     delay(50);
-    while (Serial.available() > 0){
-      serialInput = Serial.readString().toInt();
+    while (pi.available() > 0){
+      serialInput = pi.readString().toInt();
     }
-    Serial.flush();
+    pi.flush();
   }
-//  Serial.println(serialInput);
   return serialInput;
 }
 
@@ -33,12 +39,13 @@ void sendToggle(int serialInput){
 //  Serial.println(serialInput);
   if(serialInput == 1){
     digitalWrite(LED_PIN, HIGH);
-    Serial.println("Arduino turned LED on");
+    pi.println("Arduino turned LED on");
+    pi.write("Arduino turned LED on");
+
   }else if(serialInput == 0){
-    Serial.println("Arduino turned LED off");
+    pi.println("Arduino turned LED off");
+    pi.write("Arduino turned LED off");
+
     digitalWrite(LED_PIN, LOW);
   }
-//  else{
-//    Serial.print("Something went wrong in comunication");
-//  }
 }
