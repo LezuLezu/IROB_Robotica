@@ -1,0 +1,111 @@
+<!-- basix html page with body
+ -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ESP Chat</title>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <article class="container">
+            <h1>ESP Chat - Bulletin Board</h1>
+            <section class="chat" id="chat">
+            </section>
+
+            <form>
+                <input type="text" id="message" placeholder="Enter your message">
+                <!-- event on submit -->
+                <button type="button" id="send" onclick="sendMessage()">Send</button>
+            </form>
+        </article>
+
+        <style>
+            *, *::after, *::before {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            html {
+                font-size: 62.5%;
+                height: 100vh;
+                width: 100%;
+            }
+
+            body {
+                font-size: 1.8rem;
+                background-color: #181818;
+            }
+
+            .container{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                padding: 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 2rem;
+                border-radius: 1rem;
+                width: 50%;
+                height: 50%;
+                background-color: #181818;
+            }
+
+            h1{
+                font-size: 5rem;
+                font-weight: bold;
+                color: #fff;
+            }
+
+            .chat{
+                width: 100%;
+                height: 100%;
+                overflow-y: scroll;
+                border: 1px solid #000;
+                padding: 1rem;
+                background-color: #F2F2F2;
+                border-radius: 1rem;
+            }
+
+            form{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                width: 100%;
+                padding: 0 4rem;
+            }
+
+            input{
+                width: 100%;
+                height: 5rem;
+                border: 1px solid #000;
+                border-radius: 1rem;
+                padding: 1rem;
+                font-size: 1.8rem;
+            }
+
+            button{
+                padding: 1rem 2rem;
+                border: none;
+                border-radius: 1rem;
+                background-color: #8758FF;
+                color: #fff;
+                font-size: 1.8rem;
+                cursor: pointer;
+            }
+
+            button:hover{
+                background-color: -50%;
+                transform: scale(1.1);
+            }
+        </style>
+
+        <!-- add chatroom js script -->
+        <script src="chatroom.js"></script>
+
+    </body>
+</html>
