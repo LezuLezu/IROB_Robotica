@@ -1,0 +1,21 @@
+<!-- basix html page with body
+ -->
+<html>
+<head>
+<title> chatroom</title>
+<!-- add chatroom js script -->
+<script src="chatroom.js"></script>
+</head>
+<body>
+    <article class="container">
+        <section class="chat" id="chat">
+
+        </section>
+        <form onsubmit="sendMessage()">
+            <input type="text" id="message" placeholder="Enter your message">
+            <!-- event on submit -->
+            <button type="submit" id="send" >Send</button>
+        </form>
+    </article>
+
+</body>
